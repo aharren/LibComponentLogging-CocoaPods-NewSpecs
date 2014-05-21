@@ -59,17 +59,14 @@ mkdir "${work_dir}"
 cd "${work_dir}"
 
 # copy testbase resources
-cp -r ../../testbase/* .
+cp -r "../../../testbase/Project" .
+cp -r "../../../testbase/Project.xcodeproj" .
+cp -r "../../../testbase/ProjectTests" .
 
 # set up CocoaPods
 step "pod setup"
 rm -rf ~/.cocoapods
 pod "_${cocoapods_version}_" --version > pod_init_out.log 2> pod_init_err.log
 assert_file_contains pod_init_out.log "${cocoapods_version}"
-ln -s "${current_dir}/../.." ~/.cocoapods/repos/a_lcl
+ln -s "${current_dir}/../../.." ~/.cocoapods/repos/a_lcl
 rm -rf ~/.cocoapods/repos/master/Specs/LibComponentLogging*
-
-# lint the specs
-step "pod spec lint"
-pod "_${cocoapods_version}_" spec lint ~/.cocoapods/repos/a_lcl --quick > pod_lint_out.log 2> pod_lint_err.log
-assert_file_contains pod_lint_out.log "All the specs passed validation"

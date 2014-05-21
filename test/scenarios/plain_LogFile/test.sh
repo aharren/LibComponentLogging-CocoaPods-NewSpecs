@@ -3,7 +3,7 @@
 cocoapods_version=$1
 cocoapods_selection="_${cocoapods_version}_"
 
-source ../testbase/testbase.sh $cocoapods_version
+source ../../testbase/testbase.sh ${cocoapods_version}
 
 # create Podfile
 cat >Podfile <<END

@@ -8,11 +8,11 @@ for cocoapods_version in ${cocoapods_versions[@]} ; do
 
   echo "- cocoapods ${cocoapods_version}"
 
-  # for all test directories
-  test_dirs=( "plain" )
-  for test_dir in ${test_dirs[@]} ; do
-    echo "  - ${test_dir}"
-    cd "${current_dir}/${test_dir}"
+  # for all scenarios
+  scenario_dirs=( "spec_lint" "plain_LogFile" )
+  for scenario_dir in ${scenario_dirs[@]} ; do
+    echo "  - ${scenario_dir}"
+    cd "${current_dir}/scenarios/${scenario_dir}"
     ./test.sh ${cocoapods_version}
   done
 
