@@ -14,6 +14,8 @@ for cocoapods_version in ${cocoapods_versions[@]} ; do
   scenario_dirs=(
     # pod spec lint for all pod specs
     "spec_lint"
+    # core, plain pod install
+    "plain_Core"
     # logging back-ends, plain pod install
     "plain_NSLog"
     "plain_LogFile"
