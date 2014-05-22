@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cocoapods_version=$1
+description=$2
 current_dir=`pwd`
 
 # assertions
@@ -46,6 +47,9 @@ assert_file_not_contains() {
 step() {
   echo "    - $1 "
 }
+
+# show description
+echo " -- ${description}"
 
 # intialize
 step "init"

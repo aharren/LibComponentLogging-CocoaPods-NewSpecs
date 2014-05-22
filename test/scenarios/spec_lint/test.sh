@@ -1,9 +1,11 @@
 #!/bin/bash
 
+description="pod spec lint for all pod specs"
+
 cocoapods_version=$1
 cocoapods_selection="_${cocoapods_version}_"
 
-source ../../testbase/testbase.sh ${cocoapods_version}
+source ../../testbase/testbase.sh ${cocoapods_version} "${description}"
 
 # lint the specs
 step "pod spec lint"
