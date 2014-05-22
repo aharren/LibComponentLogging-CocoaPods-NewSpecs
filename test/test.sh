@@ -17,6 +17,7 @@ for cocoapods_version in ${cocoapods_versions[@]} ; do
     "plain_LogFile"
     "plain_SystemLog"
     "plain_NSLogger"
+    "plain_UserDefaults"
   )
   for scenario_dir in ${scenario_dirs[@]} ; do
     echo "  - ${scenario_dir}"
