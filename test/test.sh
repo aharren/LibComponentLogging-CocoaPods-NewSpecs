@@ -24,6 +24,8 @@ for cocoapods_version in ${cocoapods_versions[@]} ; do
     # extensions, plain pod install
     "plain_UserDefaults"
     "plain_qlog"
+    # lcl_configure pod variants
+    "configure_Core_LogFile_qlog"
   )
   for scenario_dir in ${scenario_dirs[@]} ; do
     echo -ne "  - ${scenario_dir}"
