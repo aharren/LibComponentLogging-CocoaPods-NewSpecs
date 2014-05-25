@@ -16,7 +16,13 @@
   "summary": "LibComponentLogging logging back-end for Florent Pillet's NSLogger client.",
   "description": "LibComponentLogging-NSLogger is a logging back-end for LibComponentLogging which integrates the logging client from Florent Pillet's NSLogger project. See http://github.com/fpillet/NSLogger for details about NSLogger.",
 
-  "source_files": "LCLNSLogger*.{h,m}",
+  "prepare_command": "echo '{\"name\": \"NSLogger\", \"type\": \"logger\", \"main_header\": \"LCLNSLogger.h\", \"config_template\": \"LCLNSLoggerConfig.template.h\"}' > pod.lcl_configure",
+  "source_files": [
+    "LCLNSLogger*.{h,m}"
+  ],
+  "preserve_paths": [
+    "*.lcl_configure"
+  ],
   "requires_arc": false,
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "\"${PODS_ROOT}/..\""

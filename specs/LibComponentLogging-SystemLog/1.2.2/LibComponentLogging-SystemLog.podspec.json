@@ -16,7 +16,13 @@
   "summary": "LibComponentLogging logging back-end which sends log messages to the Apple System Log facility (ASL).",
   "description": "LibComponentLogging-SystemLog is a logging back-end for LibComponentLogging which send log messages to the Apple System Log facility (ASL).",
 
-  "source_files": "LCLSystemLog*.{h,m}",
+  "prepare_command": "echo '{\"name\": \"SystemLog\", \"type\": \"logger\", \"main_header\": \"LCLSystemLog.h\", \"config_template\": \"LCLSystemLogConfig.template.h\"}' > pod.lcl_configure",
+  "source_files": [
+    "LCLSystemLog*.{h,m}"
+  ],
+  "preserve_paths": [
+    "*.lcl_configure"
+  ],
   "requires_arc": false,
   "xcconfig": {
     "HEADER_SEARCH_PATHS": "\"${PODS_ROOT}/..\""
