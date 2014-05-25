@@ -13,6 +13,22 @@ assert_success() {
   fi
 }
 
+assert_file_exists() {
+  file=$1
+  if [[ ! -e "$file" ]] ; then
+    echo "## assertion failed: expected file '$file' to exist"
+    exit
+  fi
+}
+
+assert_file_not_exists() {
+  file=$1
+  if [[ -e "$file" ]] ; then
+    echo "## assertion failed: expected file '$file' to not exist"
+    exit
+  fi
+}
+
 assert_file_contains() {
   file=$1
   what=$2
