@@ -30,6 +30,9 @@ assert_file_not_exists "lcl_config_logger.h"
 assert_file_not_exists "lcl_config_extensions.h"
 assert_file_not_exists "LCLLogFileConfig.h"
 lcl_configure pod > configure_out.log 2> configure_err.log
+assert_file_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
+assert_file_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
+assert_file_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
 assert_file_contains configure_out.log "Using LibComponentLogging-Core (core)"
 assert_file_contains configure_out.log "Using LibComponentLogging-LogFile (LogFile logger)"
 assert_file_contains configure_out.log "Creating configuration file 'LCLLogFileConfig.h' from template 'Pods/LibComponentLogging-LogFile/LCLLogFileConfig.template.h'"
@@ -39,6 +42,8 @@ assert_file_exists "lcl_config_components.h"
 assert_file_exists "lcl_config_logger.h"
 assert_file_exists "lcl_config_extensions.h"
 assert_file_exists "LCLLogFileConfig.h"
+assert_file_contains lcl_config_logger.h "#include \"LCLLogFile.h\""
+assert_file_contains lcl_config_extensions.h "#include \"qlog.h\""
 
 # add log component
 cat <<END >> lcl_config_components.h
@@ -79,6 +84,8 @@ step "pod update"
 pod ${cocoapods_selection} update --no-repo-update > pod_out.log 2> pod_err.log
 assert_success
 assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
+assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
+assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
 
 # run lcl_configure pod
 step "run lcl_configure pod"
@@ -87,6 +94,9 @@ assert_file_exists "lcl_config_logger.h"
 assert_file_exists "lcl_config_extensions.h"
 assert_file_exists "LCLLogFileConfig.h"
 lcl_configure pod > configure_out.log 2> configure_err.log
+assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
+assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
+assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
 assert_file_contains configure_out.log "Using LibComponentLogging-Core (core)"
 assert_file_contains configure_out.log "Using LibComponentLogging-LogFile (LogFile logger)"
 assert_file_not_contains configure_out.log "LCLLogFileConfig.h"
@@ -106,6 +116,8 @@ step "pod install"
 pod ${cocoapods_selection} install --no-repo-update > pod_out.log 2> pod_err.log
 assert_success
 assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
+assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
+assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
 
 # build
 step "build"
