@@ -16,7 +16,7 @@
   "summary": "A LibComponentLogging extension which stores/restores log level settings to/from the user defaults.",
   "description": "LibComponentLogging-UserDefaults is an extension for LibComponentLogging which stores/restores log level settings to/from the user defaults.",
 
-  "prepare_command": "echo '{\"name\": \"UserDefaults\", \"type\": \"extension\", \"main_header\": \"LCLUserDefaults.h\"}' > pod.lcl_configure",
+  "prepare_command": "echo '{\"name\": \"UserDefaults\", \"type\": \"extension\", \"main_header\": \"LCLUserDefaults.h\", \"config_template\": \"LCLUserDefaultsConfig.template.h\"}' > pod.lcl_configure",
   "source_files": [
     "LCLUserDefaults*.{h,m}"
   ],
