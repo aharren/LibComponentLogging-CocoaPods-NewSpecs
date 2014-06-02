@@ -9,3 +9,10 @@
 # Overview
 
 post_install-hook-free CocoaPods pods specs for LibComponentLogging.
+
+Installation:
+
+    $ pod repo add lcl https://github.com/aharren/LibComponentLogging-CocoaPods-NewSpecs.git
+
+See also [https://github.com/aharren/LibComponentLogging-configure](https://github.com/aharren/LibComponentLogging-configure).
+
