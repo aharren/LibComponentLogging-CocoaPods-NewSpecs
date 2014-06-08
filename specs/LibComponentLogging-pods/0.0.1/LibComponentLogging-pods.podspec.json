@@ -20,7 +20,7 @@
   "source_files": [
   ],
   "preserve_paths": [
-    "configure/lcl_configure"
+    "*"
   ],
   "requires_arc": false,
 
