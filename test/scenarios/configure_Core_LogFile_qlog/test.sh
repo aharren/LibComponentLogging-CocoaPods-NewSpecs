@@ -13,6 +13,7 @@ platform :ios, 7
 pod 'LibComponentLogging-Core'
 pod 'LibComponentLogging-LogFile'
 pod 'LibComponentLogging-qlog'
+pod 'LibComponentLogging-pods'
 END
 
 # pod install
@@ -22,6 +23,7 @@ assert_success
 assert_file_contains pod_out.log "Installing LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Installing LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Installing LibComponentLogging-qlog (1.1.1)"
+assert_file_contains pod_out.log "Installing LibComponentLogging-pods (0.0.1)"
 
 # run lcl_configure pod
 step "run lcl_configure pod"
@@ -29,7 +31,7 @@ assert_file_not_exists "lcl_config_components.h"
 assert_file_not_exists "lcl_config_logger.h"
 assert_file_not_exists "lcl_config_extensions.h"
 assert_file_not_exists "LCLLogFileConfig.h"
-lcl_configure pod > configure_out.log 2> configure_err.log
+Pods/LibComponentLogging-pods/configure/lcl_configure pod > configure_out.log 2> configure_err.log
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
@@ -86,6 +88,7 @@ assert_success
 assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
+assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.1)"
 
 # run lcl_configure pod
 step "run lcl_configure pod"
@@ -93,7 +96,7 @@ assert_file_exists "lcl_config_components.h"
 assert_file_exists "lcl_config_logger.h"
 assert_file_exists "lcl_config_extensions.h"
 assert_file_exists "LCLLogFileConfig.h"
-lcl_configure pod > configure_out.log 2> configure_err.log
+Pods/LibComponentLogging-pods/configure/lcl_configure pod > configure_out.log 2> configure_err.log
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
@@ -118,6 +121,7 @@ assert_success
 assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
+assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.1)"
 
 # build
 step "build"
