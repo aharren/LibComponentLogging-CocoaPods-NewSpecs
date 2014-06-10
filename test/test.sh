@@ -26,6 +26,7 @@ for cocoapods_version in ${cocoapods_versions[@]} ; do
     "plain_qlog"
     # lcl_configure pod variants
     "configure_Core_LogFile_qlog"
+    "configure_Core_LogFile_qlog_1_1"
     "configure_Core_SystemLog_qlog_UserDefaults"
     "configure_Core_LogFile_qlog_UserDefaults_RestKit_unembedded"
   )
