@@ -5,7 +5,7 @@
     "git": "https://github.com/CenterDevice/LibComponentLogging-Crashlytics.git",
     "tag": "1.0.0"
   },
-  "homepage": "hhttps://github.com/CenterDevice/LibComponentLogging-Crashlytics",
+  "homepage": "https://github.com/CenterDevice/LibComponentLogging-Crashlytics",
   "authors": {
     "Daniel Schneller": "daniel.schneller@centerdevice.com"
   },
