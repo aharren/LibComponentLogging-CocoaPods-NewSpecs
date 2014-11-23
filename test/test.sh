@@ -5,6 +5,8 @@ current_dir=`pwd`
 # for all supported CocoaPods versions
 cocoapods_versions=(
   "0.33.1"
+  "0.34.4"
+  "0.35.0"
 )
 for cocoapods_version in ${cocoapods_versions[@]} ; do
 
