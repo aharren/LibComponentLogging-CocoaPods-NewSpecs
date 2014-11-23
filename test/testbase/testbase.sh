@@ -88,5 +88,6 @@ step "pod setup"
 rm -rf ~/.cocoapods
 pod "_${cocoapods_version}_" --version > pod_init_out.log 2> pod_init_err.log
 assert_file_contains pod_init_out.log "${cocoapods_version}"
+pod "_${cocoapods_version}_" setup > pod_setup_out.log 2> pod_setup_err.log
 ln -s "${current_dir}/../../../specs/" ~/.cocoapods/repos/a_lcl
 rm -rf ~/.cocoapods/repos/master/Specs/LibComponentLogging*
