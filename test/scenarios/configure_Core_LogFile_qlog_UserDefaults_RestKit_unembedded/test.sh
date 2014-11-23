@@ -33,7 +33,7 @@ assert_file_not_exists "lcl_config_components.h"
 assert_file_not_exists "lcl_config_logger.h"
 assert_file_not_exists "lcl_config_extensions.h"
 assert_file_not_exists "LCLLogFileConfig.h"
-Pods/LibComponentLogging-pods/configure/lcl_configure pod > configure_out.log 2> configure_err.log
+${LCL_CONFIGURE} pod > configure_out.log 2> configure_err.log
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
 assert_file_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
@@ -119,7 +119,7 @@ assert_file_exists "lcl_config_logger.h"
 assert_file_exists "lcl_config_extensions.h"
 assert_file_exists "LCLLogFileConfig.h"
 assert_file_exists "LCLUserDefaultsConfig.h"
-Pods/LibComponentLogging-pods/configure/lcl_configure pod > configure_out.log 2> configure_err.log
+${LCL_CONFIGURE} pod > configure_out.log 2> configure_err.log
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_components.h'"
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_logger.h'"
 assert_file_not_contains configure_out.log "Creating configuration file 'lcl_config_extensions.h'"
@@ -165,7 +165,7 @@ assert_file_contains pod_out.log "Using RestKit"
 
 # run lcl_configure pod
 step "run lcl_configure pod"
-Pods/LibComponentLogging-pods/configure/lcl_configure pod > configure_out.log 2> configure_err.log
+${LCL_CONFIGURE} pod > configure_out.log 2> configure_err.log
 
 # build
 step "build"
