@@ -83,6 +83,13 @@ cp -r "../../../testbase/Project" .
 cp -r "../../../testbase/Project.xcodeproj" .
 cp -r "../../../testbase/ProjectTests" .
 
+# CocoaPods pod build headers
+cocoapods_path_pod_buildheaders="Pods/Headers/Build"
+if [ "${cocoapods_version}" == "0.33.1" ];
+then
+  cocoapods_path_pod_buildheaders="Pods/BuildHeaders"
+fi
+
 # set up CocoaPods
 step "pod setup"
 rm -rf ~/.cocoapods
