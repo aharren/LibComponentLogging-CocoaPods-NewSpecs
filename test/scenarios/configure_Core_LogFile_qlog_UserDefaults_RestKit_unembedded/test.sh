@@ -24,7 +24,7 @@ assert_success
 assert_file_contains pod_out.log "Installing LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Installing LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Installing LibComponentLogging-UserDefaults (1.0.3)"
-assert_file_contains pod_out.log "Installing LibComponentLogging-pods (0.0.1)"
+assert_file_contains pod_out.log "Installing LibComponentLogging-pods (0.0.2)"
 assert_file_contains pod_out.log "Installing RestKit"
 
 # run lcl_configure pod
@@ -109,7 +109,7 @@ assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
 assert_file_contains pod_out.log "Using LibComponentLogging-UserDefaults (1.0.3)"
-assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.1)"
+assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.2)"
 assert_file_contains pod_out.log "Using RestKit"
 
 # run lcl_configure pod
@@ -160,7 +160,7 @@ assert_file_contains pod_out.log "Using LibComponentLogging-Core (1.3.3)"
 assert_file_contains pod_out.log "Using LibComponentLogging-LogFile (1.2.2)"
 assert_file_contains pod_out.log "Using LibComponentLogging-qlog (1.1.1)"
 assert_file_contains pod_out.log "Using LibComponentLogging-UserDefaults (1.0.3)"
-assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.1)"
+assert_file_contains pod_out.log "Using LibComponentLogging-pods (0.0.2)"
 assert_file_contains pod_out.log "Using RestKit"
 
 # run lcl_configure pod
